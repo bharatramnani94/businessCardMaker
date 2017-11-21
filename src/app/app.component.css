@@ -1,0 +1,63 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.card {
+    background: yellow;
+    width: 30rem;
+    max-width: 30rem;
+    min-width: 30rem;
+    letter-spacing: 0.14em;
+    font-weight: 700;
+}
+
+.card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+}
+
+.card__top {
+}
+
+.card__bottom {
+    margin-top: 3rem;
+}
+
+.card__designation {
+    text-transform: uppercase;
+}
+
+.card__city {
+    margin-bottom: 1rem;
+}
+
+
+
+.inputs .inputs__content, .inputs .inputs__style {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.inputs input[type="text"] {
+    padding: 1rem 3.2rem 1rem 0.4rem;
+    border: 0;
+    border-bottom: 1px solid #eee;
+}
+
+.inputs input {
+    margin: 0.2rem;
+    font-size: 0.9rem;
+}
