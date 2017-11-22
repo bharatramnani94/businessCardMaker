@@ -16,7 +16,8 @@ export class AppComponent {
     color:any = '#ffffff';
     background:any = '#0090ff';
     backgroundOpacity:string = '0.8';
-    patternOpacity:string = '0.8';
+    patternOpacity:string = '1';
+    letterSpacing:string = '0.14';
     pattern:string = '/assets/patterns/pattern1.jpg';
     borderRadius:string = '2';
     alignment:string = 'left';  // left, center, right
@@ -48,8 +49,12 @@ export class AppComponent {
                 break;
             
             case "jpg":
-            default:
                 domtoimage.toJpeg(nodeToExport, { quality: 1 })
+                    .then((dataUrl) => this.saveAndOpen(dataUrl));
+                break;
+            case "png":
+            default:
+                domtoimage.toPng(nodeToExport, { quality: 1 })
                     .then((dataUrl) => this.saveAndOpen(dataUrl));
                 break;
         }
