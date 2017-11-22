@@ -12,7 +12,7 @@
           <a href="mailto:abc@def.com" class="card__mail">{{mail}}</a>
         </div>
       </div>
-      <div class="card__ghost-bg patternx" [ngStyle]="{'background-image': 'url(' + pattern + ')', color: 'red'}"></div>
+      <div class="card__ghost-bg pattern" [ngStyle]="{'background-image': 'url(' + pattern + ')', 'opacity': patternOpacity}"></div>
       <div class="card__ghost-bg" [ngStyle]="{'background-color': background, 'opacity': backgroundOpacity }"></div>
     </div>
   </div>
@@ -56,8 +56,16 @@
             <input type="color" [(ngModel)]="background" placeholder="Color">
           </div>
           <div class="input">
-            <span>Background Opacity</span>
+            <span>Background Color Opacity</span>
             <input type="range" [(ngModel)]="backgroundOpacity" min="0" max="1" step="0.01">
+          </div>
+          <div class="input">
+            <span>Background Pattern Opacity</span>
+            <input type="range" [(ngModel)]="patternOpacity" min="0" max="1" step="0.01">
+          </div>
+          <div class="input">
+            <span>Upload Custom Background Image</span>
+            <input type="file" name="customBackground" accept="image/*" (change)="customBackgroundChanged($event)" />
           </div>
           <div class="input">
             <span>Background Pattern</span>

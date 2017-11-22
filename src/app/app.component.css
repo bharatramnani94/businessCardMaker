@@ -28,6 +28,8 @@
 }
 .card__ghost-bg.pattern {
     opacity: 0.25;
+    background-size: cover;
+    background-position: center;
 }
 
 .card a {
