@@ -15,7 +15,15 @@ export class AppComponent {
     mail:string = 'hi@bharatramnani.com';
     color:any = '#ffffff';
     background:any = '#0090ff';
+    backgroundOpacity:string = '0.8';
+    pattern:string = '/assets/patterns/pattern1.jpg';
     borderRadius:string = '2';
+    alignment:string = 'left';  // left, center, right
+
+    patternsList:string[] = [
+        'pattern1.jpg',
+        'pattern2.gif'
+    ];
 
 
     private nodeIdForExport:string = 'js-card';
@@ -27,23 +35,31 @@ export class AppComponent {
         link.click();
     }
 
-    generateCard(filetype:string) {
+    generateCard(filetype:string = 'jpg') {
 
         let nodeToExport = document.getElementById(this.nodeIdForExport);
 
         switch (filetype) {
             
             case "svg":
-                debugger;
                 domtoimage.toSvg(nodeToExport)
                     .then((dataUrl) => this.saveAndOpen(dataUrl));
                 break;
-                
+            
+            case "jpg":
             default:
                 domtoimage.toJpeg(nodeToExport, { quality: 1 })
                     .then((dataUrl) => this.saveAndOpen(dataUrl));
                 break;
         }
+    }
+
+    patternChanged(patternName:string) {
+        this.pattern = '/assets/patterns/' + patternName;
+    }
+
+    alignmentChanged(newAlignment:string = 'left') {
+        this.alignment = newAlignment;
     }
 
 

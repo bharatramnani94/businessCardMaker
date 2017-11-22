@@ -1,7 +1,7 @@
 <div class="container">
   <div class="preview">
-    <div class="card" id="js-card" [ngStyle]="{'color': color, 'background': background, 'border-radius': borderRadius + 'px'}">
-      <div class="card__container">
+    <div class="card" id="js-card" [ngStyle]="{'color': color}">
+      <div class="card__container" [ngClass]="alignment">
         <div class="card__top">
           <h2 class="card__name">{{name}}</h2>
           <p class="card__designation">{{designation}}</p>
@@ -12,6 +12,8 @@
           <a href="mailto:abc@def.com" class="card__mail">{{mail}}</a>
         </div>
       </div>
+      <div class="card__ghost-bg patternx" [ngStyle]="{'background-image': 'url(' + pattern + ')', color: 'red'}"></div>
+      <div class="card__ghost-bg" [ngStyle]="{'background-color': background, 'opacity': backgroundOpacity }"></div>
     </div>
   </div>
   <div class="inputs">
@@ -24,15 +26,49 @@
     </div>
     <div class="inputs__style">
       <div class="input">
-        <span>Background Color</span>
-        <input type="color" [(ngModel)]="background" placeholder="Color">
+        <span>Alignment</span>
+        <label>
+          <input type="radio" name="alignment" [value]="'left'" placeholder="Alignment" (change)="alignmentChanged('left')" checked>
+          Left
+        </label>
+        <label>
+          <input type="radio" name="alignment" [value]="'center'" placeholder="Alignment" (change)="alignmentChanged('center')">
+          Center
+        </label>
+        <label>
+          <input type="radio" name="alignment" [value]="'right'" placeholder="Alignment" (change)="alignmentChanged('right')">
+          Right
+        </label>
       </div>
       <div class="input">
         <span>Font Color</span>
         <input type="color" [(ngModel)]="color" placeholder="Color">
       </div>
-      <div class="input">
-        <input type="range" [(ngModel)]="borderRadius" min="0" max="20" step="1">
+      <!-- <div class="input">
+        <span>Border Radius</span>
+        <input type="range" [(ngModel)]="borderRadius" min="0" max="25" step="1">
+      </div> -->
+      <div class="inputs__group">
+        <h3 class="input__group-title">Background</h3>
+        <div class="inputs__group-controls">
+          <div class="input">
+            <span>Background Color</span>
+            <input type="color" [(ngModel)]="background" placeholder="Color">
+          </div>
+          <div class="input">
+            <span>Background Opacity</span>
+            <input type="range" [(ngModel)]="backgroundOpacity" min="0" max="1" step="0.01">
+          </div>
+          <div class="input">
+            <span>Background Pattern</span>
+            <div class="input__list">
+              <label *ngFor="let ptrn of patternsList; let i = index">
+                <input type="radio" name="patternBackgroundRadioButton" [value]="ptrn" placeholder="Pattern" (change)="patternChanged(ptrn)" [checked]="i == 0" >
+                {{ "Pattern " + (i+1)}}
+              </label> 
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <input type="submit" (click)="generateCard('jpg')" value="Generate JPG">
