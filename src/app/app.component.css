@@ -122,6 +122,7 @@
     border: 0;
     border-radius: 500px;
     color: #0090ff;
+    cursor: pointer;
 }
 
 input[type="color"] {

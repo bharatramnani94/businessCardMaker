@@ -79,7 +79,7 @@ export class AppComponent {
             this.pattern = event.target["result"];
         };
         reader.onerror = (event) => {
-            alert("File could not be read! Code " + event.target.error.code);
+            alert("File could not be read! Code " + event.target["error"].code);
         };
         reader.readAsDataURL(file);
     }
