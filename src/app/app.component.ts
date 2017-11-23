@@ -18,7 +18,7 @@ export class AppComponent {
     backgroundOpacity:string = '0.8';
     patternOpacity:string = '1';
     letterSpacing:string = '0.14';
-    pattern:string = '/assets/patterns/pattern1.jpg';
+    pattern:string = './assets/patterns/pattern1.jpg';
     borderRadius:string = '2';
     alignment:string = 'left';  // left, center, right
 
@@ -61,7 +61,7 @@ export class AppComponent {
     }
 
     patternChanged(patternName:string) {
-        this.pattern = '/assets/patterns/' + patternName;
+        this.pattern = './assets/patterns/' + patternName;
     }
 
     alignmentChanged(newAlignment:string = 'left') {

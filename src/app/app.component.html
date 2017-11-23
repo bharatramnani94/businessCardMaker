@@ -12,7 +12,7 @@
           <a href="mailto:abc@def.com" class="card__mail">{{mail}}</a>
         </div>
       </div>
-      <div class="card__ghost-bg pattern" [ngStyle]="{'background-image': 'url(.' + pattern + ')', 'opacity': patternOpacity}"></div>
+      <div class="card__ghost-bg pattern" [ngStyle]="{'background-image': 'url(' + pattern + ')', 'opacity': patternOpacity}"></div>
       <div class="card__ghost-bg" [ngStyle]="{'background-color': background, 'opacity': backgroundOpacity }"></div>
     </div>
   </div>
