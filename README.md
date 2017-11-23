@@ -2,6 +2,23 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.3.
 
+
+
+### View the project LIVE at [https://bharatramnani94.github.io/businessCardMaker/](https://bharatramnani94.github.io/businessCardMaker/)
+
+
+Just fiddle around with this, and have fun generating tons of images that you probably wont ever use for real, but is cool anyway!
+
+
+
+
+
+---
+
+
+
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
