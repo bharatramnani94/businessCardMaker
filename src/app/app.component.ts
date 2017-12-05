@@ -9,7 +9,9 @@ import domtoimage from 'dom-to-image';
 export class AppComponent {
 
 
-  COLOR: string = "red";
+  COLOR: string = "orange";
+  NUMBER_OF_CONSTITUENCIES:number = 182;
+  // NUMBER_OF_CONSTITUENCIES:number = 1;
 
 
   ngOnInit() {
@@ -32,7 +34,7 @@ export class AppComponent {
 
   private resetStyles(currentConstituency: number) {
     let el = document.getElementById('GUJARAT-' + currentConstituency);
-    el.style.fill = 'transparent';
+    el.classList.remove(this.COLOR);
   }
 
   generateCard(filetype: string = 'jpg', currentConstituency: number) {
@@ -58,14 +60,14 @@ export class AppComponent {
     }
   }
 
-  extractConstituencyImages(color: string = this.COLOR) {
-    for (let i = 1; i <= 182; i++) {
+  extractConstituencyImages() {
+    for (let i = 1; i <= this.NUMBER_OF_CONSTITUENCIES; i++) {
       setTimeout(() => {
         let e = document.getElementById('GUJARAT-' + i);
-        e.style.fill = color;
+        e.classList.add(this.COLOR);
 
-        this.generateCard('png', i);
-      }, 3000 + (3000 * i));
+        this.generateCard('jpg', i);
+      }, (3000 * i));
     }
   }
 
