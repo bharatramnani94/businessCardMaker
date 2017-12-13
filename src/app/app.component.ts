@@ -17,7 +17,8 @@ export class AppComponent {
   ngOnInit() {
     setTimeout(() => {
       console.log("Starting...");
-      this.extractConstituencyImages();
+      // this.extractConstituencyImages();
+      this.generateCard('png', 1);
     }, 1000);
   }
 
