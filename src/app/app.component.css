@@ -165,18 +165,18 @@ input[type="color"] {
 }
 
 @media screen and (max-width: 1400px) {
-    .container {
+    /* .container {
         background: #ff00ff;
-    }
+    } */
     .inputs {
         width: 50%;
     }
 }
 
 @media screen and (max-width: 1200px) {
-    .container {
+    /* .container {
         background: #fffb00;
-    }
+    } */
     .container {
         flex-direction: column;
         max-height: 100vh;
@@ -193,9 +193,9 @@ input[type="color"] {
 }
 
 @media screen and (max-width: 570px) {
-    .container {
+    /* .container {
         background: #00ff2a;
-    }
+    } */
     .inputs {
         padding: 0 2rem 2rem;
     }
@@ -225,18 +225,18 @@ input[type="color"] {
 }
 
 @media screen and (max-width: 440px) {
-    .container {
+    /* .container {
         background: #ff00ff;
-    }
+    } */
     .preview {
         transform: scale(0.65);
     }
 }
 
 @media screen and (max-width: 330px) {
-    .container {
+    /* .container {
         background: #ff7b00;
-    }
+    } */
     .preview {
         transform: scale(0.55);
     }
