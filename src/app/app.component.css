@@ -196,11 +196,19 @@ input[type="color"] {
     /* .container {
         background: #00ff2a;
     } */
+    .preview {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        flex: 0;
+    }
     .inputs {
         padding: 0 2rem 2rem;
     }
+    .inputs__submit {
+        padding-right: 0;
+    }
     .inputs__submit input[type="submit"] {
-        padding: 1rem 1.8rem;
+        padding: 0.8rem 1.2rem;
     }
     .inputs .inputs__content,
     .inputs .inputs__style {
