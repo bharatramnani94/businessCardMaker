@@ -1,99 +1,93 @@
 <div class="container">
-  <div class="preview">
-    <div class="card" id="js-card" [ngStyle]="{'color': color, 'letter-spacing': letterSpacing + 'em'}">
-      <div class="card__container" [ngClass]="alignment">
-        <div class="card__top">
-          <h2 class="card__name">{{name}}</h2>
-          <p class="card__designation">{{designation}}</p>
+    <div class="preview">
+        <div class="card" id="js-card" [ngStyle]="{'color': color, 'letter-spacing': letterSpacing + 'em'}">
+            <div class="card__container" [ngClass]="alignment">
+                <div class="card__top">
+                    <h2 class="card__name">{{name}}</h2>
+                    <p class="card__designation">{{designation}}</p>
+                </div>
+                <div class="card__bottom">
+                    <a href="tel:1234567890" class="card__phone">{{phone}}</a>
+                    <p class="card__city">{{place}}</p>
+                    <a href="mailto:abc@def.com" class="card__mail">{{mail}}</a>
+                </div>
+            </div>
+            <div class="card__ghost-bg pattern" [ngStyle]="{'background-image': 'url(' + pattern + ')', 'opacity': patternOpacity}"></div>
+            <div class="card__ghost-bg" [ngStyle]="{'background-color': background, 'opacity': backgroundOpacity }"></div>
         </div>
-        <div class="card__bottom">
-          <a href="tel:1234567890" class="card__phone">{{phone}}</a>
-          <p class="card__city">{{place}}</p>
-          <a href="mailto:abc@def.com" class="card__mail">{{mail}}</a>
+    </div>
+    <div class="inputs">
+        <div class="inputs__content">
+            <h3 class="input__group-title">Text Changes</h3>
+            <input type="text" [(ngModel)]="name" placeholder="Name">
+            <input type="text" [(ngModel)]="designation" placeholder="Designation">
+            <input type="text" [(ngModel)]="phone" placeholder="Phone">
+            <input type="text" [(ngModel)]="place" placeholder="Place">
+            <input type="text" [(ngModel)]="mail" placeholder="Mail">
         </div>
-      </div>
-      <div class="card__ghost-bg pattern" [ngStyle]="{'background-image': 'url(' + pattern + ')', 'opacity': patternOpacity}"></div>
-      <div class="card__ghost-bg" [ngStyle]="{'background-color': background, 'opacity': backgroundOpacity }"></div>
-    </div>
-  </div>
-  <div class="inputs">
-    <div class="inputs__content">
-      <h3 class="input__group-title">Text Changes</h3>
-      <input type="text" [(ngModel)]="name" placeholder="Name">
-      <input type="text" [(ngModel)]="designation" placeholder="Designation">
-      <input type="text" [(ngModel)]="phone" placeholder="Phone">
-      <input type="text" [(ngModel)]="place" placeholder="Place">
-      <input type="text" [(ngModel)]="mail" placeholder="Mail">
-    </div>
-    <div class="inputs__style">
-      <h3 class="input__group-title">Style Changes</h3>
-      <div class="input">
-        <span>Alignment</span>
-        <label>
+        <div class="inputs__style">
+            <h3 class="input__group-title">Style Changes</h3>
+            <div class="input">
+                <span>Alignment</span>
+                <label>
           <input type="radio" name="alignment" [value]="'left'" placeholder="Alignment" (change)="alignmentChanged('left')" checked>
           Left
         </label>
-        <label>
+                <label>
           <input type="radio" name="alignment" [value]="'center'" placeholder="Alignment" (change)="alignmentChanged('center')">
           Center
         </label>
-        <label>
+                <label>
           <input type="radio" name="alignment" [value]="'right'" placeholder="Alignment" (change)="alignmentChanged('right')">
           Right
         </label>
-      </div>
-      <div class="input">
-        <span>Font Color</span>
-        <input type="color" [(ngModel)]="color" placeholder="Color">
-      </div>
-      <div class="input">
-        <span>Letter Spacing</span>
-        <input type="range" [(ngModel)]="letterSpacing" min="-0.15" max="0.3" step="0.01">
-      </div>
-      <!-- <div class="input">
+            </div>
+            <div class="input">
+                <span>Font Color</span>
+                <input type="color" [(ngModel)]="color" placeholder="Color">
+            </div>
+            <div class="input">
+                <span>Letter Spacing</span>
+                <input type="range" [(ngModel)]="letterSpacing" min="-0.15" max="0.3" step="0.01">
+            </div>
+            <!-- <div class="input">
         <span>Border Radius</span>
         <input type="range" [(ngModel)]="borderRadius" min="0" max="25" step="1">
       </div> -->
-      <div class="inputs__group">
-        <div class="inputs__group-controls">
-          <div class="input">
-            <span>Background Color</span>
-            <input type="color" [(ngModel)]="background" placeholder="Color">
-          </div>
-          <div class="input">
-            <span>Background Color Opacity</span>
-            <input type="range" [(ngModel)]="backgroundOpacity" min="0" max="1" step="0.01">
-          </div>
-          <div class="input">
-            <span>Background Pattern Opacity</span>
-            <input type="range" [(ngModel)]="patternOpacity" min="0" max="1" step="0.01">
-          </div>
-          <div class="input">
-            <span>Upload Custom Background Image</span>
-            <input type="file" name="customBackground" accept="image/*" (change)="customBackgroundChanged($event)" />
-          </div>
-          <div class="input">
-            <span>Background Pattern</span>
-            <div class="input__list">
-              <label *ngFor="let ptrn of patternsList; let i = index">
+            <div class="inputs__group">
+                <div class="inputs__group-controls">
+                    <div class="input">
+                        <span>Background Color</span>
+                        <input type="color" [(ngModel)]="background" placeholder="Color">
+                    </div>
+                    <div class="input">
+                        <span>Background Color Opacity</span>
+                        <input type="range" [(ngModel)]="backgroundOpacity" min="0" max="1" step="0.01">
+                    </div>
+                    <div class="input">
+                        <span>Background Pattern Opacity</span>
+                        <input type="range" [(ngModel)]="patternOpacity" min="0" max="1" step="0.01">
+                    </div>
+                    <div class="input">
+                        <span>Upload Custom Background Image</span>
+                        <input type="file" name="customBackground" accept="image/*" (change)="customBackgroundChanged($event)" />
+                    </div>
+                    <div class="input">
+                        <span>Background Pattern</span>
+                        <div class="input__list">
+                            <label *ngFor="let ptrn of patternsList; let i = index">
                 <input type="radio" name="patternBackgroundRadioButton" [value]="ptrn" placeholder="Pattern" (change)="patternChanged(ptrn)" [checked]="i == 0" >
                 {{ "Pattern " + (i+1)}}
-              </label> 
+              </label>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
+        <div class="inputs__submit">
+            <input type="submit" (click)="generateCard('png')" value="Generate PNG">
+            <input type="submit" (click)="generateCard('jpg')" value="Generate JPG">
+            <!-- <input type="submit" (click)="generateCard('svg')" value="Generate SVG"> -->
+        </div>
     </div>
-    <div class="inputs__submit">
-      <input type="submit" (click)="generateCard('png')" value="Generate PNG">
-      <input type="submit" (click)="generateCard('jpg')" value="Generate JPG">
-      <input type="submit" (click)="generateCard('svg')" value="Generate SVG">
-    </div>
-  </div>
-</div>
-
-<div class="mobile">
-  <img src="./assets/cry.svg" alt="">
-  <h3>Uh Oh!</h3>
-  <p>Currently this isn't suited for mobile use, please view this on a desktop or a tablet.</p>
 </div>

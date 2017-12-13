@@ -2,14 +2,11 @@
     display: none;
 }
 
-
 .container {
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
-
-
 
 .card {
     width: 30rem;
@@ -30,6 +27,7 @@
     height: 100%;
     z-index: -1;
 }
+
 .card__ghost-bg.pattern {
     opacity: 0.25;
     background-size: cover;
@@ -53,17 +51,18 @@
     text-align: left;
     align-items: flex-start;
 }
+
 .card__container.center {
     text-align: center;
     align-items: center;
 }
+
 .card__container.right {
     text-align: right;
     align-items: flex-end;
 }
 
-.card__top {
-}
+.card__top {}
 
 .card__bottom {
     margin-top: 3rem;
@@ -77,9 +76,8 @@
     margin-bottom: 1rem;
 }
 
-
-
-.inputs .inputs__content, .inputs .inputs__style {
+.inputs .inputs__content,
+.inputs .inputs__style {
     display: flex;
     flex-direction: column;
     padding: 2rem;
@@ -101,7 +99,9 @@
     background: transparent;
 }
 
-.inputs__style input, .inputs__style span, .inputs__style label {
+.inputs__style input,
+.inputs__style span,
+.inputs__style label {
     color: white;
 }
 
@@ -120,8 +120,9 @@
 .inputs__submit {
     padding: 2rem;
     padding-left: 0;
-}    
-.inputs__submit input[type="submit"] {    
+}
+
+.inputs__submit input[type="submit"] {
     padding: 1rem 3.2rem;
     background: white;
     border: 0;
@@ -134,7 +135,6 @@ input[type="color"] {
     padding: 0 !important;
 }
 
-
 .preview {
     flex: none;
     display: flex;
@@ -142,7 +142,7 @@ input[type="color"] {
     align-items: center;
     margin-right: auto;
     margin-left: auto;
-    box-shadow: 6px 6px 12px -5px rgba(0,0,0,0.6);
+    box-shadow: 6px 6px 12px -5px rgba(0, 0, 0, 0.6);
 }
 
 .inputs {
@@ -151,7 +151,7 @@ input[type="color"] {
     padding: 0 2.6rem 4rem 4rem;
     flex: none;
     min-height: 100vh;
-    box-shadow: -4px 0px 12px -4px rgba(0,0,0,0.6);
+    box-shadow: -4px 0px 12px -4px rgba(0, 0, 0, 0.6);
     max-height: 100vh;
     overflow-y: scroll;
 }
@@ -164,14 +164,19 @@ input[type="color"] {
     margin: 2rem 0 1rem;
 }
 
-
 @media screen and (max-width: 1400px) {
+    .container {
+        background: #ff00ff;
+    }
     .inputs {
         width: 50%;
-    }  
+    }
 }
 
 @media screen and (max-width: 1200px) {
+    .container {
+        background: #fffb00;
+    }
     .container {
         flex-direction: column;
         max-height: 100vh;
@@ -189,23 +194,50 @@ input[type="color"] {
 
 @media screen and (max-width: 570px) {
     .container {
-        display: none;
+        background: #00ff2a;
     }
-    .mobile {
-        min-height: 100vh;
-        background: #0090ff;
-        color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        padding: 2rem;
-        text-align: center;
+    .inputs {
+        padding: 0 2rem 2rem;
     }
-    .mobile img {
-        max-width: 20vw;
+    .inputs__submit input[type="submit"] {
+        padding: 1rem 1.8rem;
     }
-    .mobile h3 {
-        padding: 2rem 1rem 0.6rem;
+    .inputs .inputs__content,
+    .inputs .inputs__style {
+        padding-right: 0;
+    }
+    .inputs__style .input {
+        padding: 1rem 0rem 1rem 0rem;
+        width: 100%;
+    }
+    .inputs__style span {
+        display: block;
+        margin-bottom: 1rem;
+        margin-right: 0;
+        width: 100%;
+    }
+}
+
+.preview {
+    padding: 2rem 0.1rem;
+    transform: scale(0.8);
+    box-shadow: none;
+}
+
+@media screen and (max-width: 440px) {
+    .container {
+        background: #ff00ff;
+    }
+    .preview {
+        transform: scale(0.65);
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .container {
+        background: #ff7b00;
+    }
+    .preview {
+        transform: scale(0.55);
     }
 }
